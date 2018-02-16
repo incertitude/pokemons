@@ -18,4 +18,10 @@ getPokemon(id: number): Pokemon {
     });
     return ta;
 }
+getPokemonTypes(): Array<string> {
+    return [
+      'Plante', 'Feu', 'Eau', 'Insecte', 'Normal', 'Electrik',
+      'Poison', 'Fée', 'Vol', 'Combat', 'Psy'
+    ];
+  }
 }

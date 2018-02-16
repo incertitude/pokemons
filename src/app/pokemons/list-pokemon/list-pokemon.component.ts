@@ -8,7 +8,6 @@ import {PokemonsService } from '../pokemons.service';
   selector: 'app-list-pokemon',
   templateUrl: './list-pokemon.component.html',
   styleUrls: ['./list-pokemon.component.css'],
-  providers: [PokemonsService]
 })
 export class ListPokemonComponent implements OnInit {
 

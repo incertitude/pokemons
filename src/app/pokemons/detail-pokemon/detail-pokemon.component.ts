@@ -7,7 +7,6 @@ import {PokemonsService} from '../pokemons.service';
   selector: 'app-detail-pokemon',
   templateUrl: './detail-pokemon.component.html',
   styleUrls: ['./detail-pokemon.component.css'],
-  providers: [PokemonsService]
 })
 export class DetailPokemonComponent implements OnInit {
 
@@ -27,6 +26,10 @@ export class DetailPokemonComponent implements OnInit {
     // Méthode permettant de rediriger l'utilisateur vers la page principale de l'application.
     goBack(): void {
     this.router.navigate(['/pokemons']);
+    }
+    goEdit(pokemon: Pokemon): void {
+      const link = ['/pokemon/edit', pokemon.id];
+      this.router.navigate(link);
     }
   }
 

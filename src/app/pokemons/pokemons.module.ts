@@ -5,21 +5,25 @@ import { DetailPokemonComponent } from './detail-pokemon/detail-pokemon.componen
 import { ShadowCardDirective } from './shadow-card.directive';
 import { PokemonTypeColorPipe } from './pokemon-type-color.pipe';
 import { PokemonRoutingModule } from './pokemon-routing.module';
-import { PokemonsService} from './pokemons.service';
 import { PokemonFormComponent } from './pokemon-form/pokemon-form.component';
 import { FormsModule } from '@angular/forms';
 import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
+import { HttpClientModule } from '@angular/common/http';
+import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+
 
 @NgModule({
   imports: [
-    CommonModule, PokemonRoutingModule, FormsModule
+    CommonModule, PokemonRoutingModule, FormsModule,
+    HttpClientModule
   ],
   declarations: [ListPokemonComponent,
     DetailPokemonComponent,
     ShadowCardDirective,
     PokemonTypeColorPipe,
     PokemonFormComponent,
-    EditPokemonComponent],
-    providers: [ PokemonsService]
+    EditPokemonComponent,
+  ],
+    providers: [ ]
 })
 export class PokemonsModule { }

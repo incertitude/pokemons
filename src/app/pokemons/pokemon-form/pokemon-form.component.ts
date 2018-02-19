@@ -1,7 +1,7 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { FormsModule } from '@angular/forms';
-import { PokemonsService} from '../pokemons.service';
+import { PokemonService} from '../../pokemon.service';
 import { Pokemon } from '../pokemon';
 
 @Component({
@@ -13,11 +13,12 @@ export class PokemonFormComponent implements OnInit {
 
   @Input() pokemon: Pokemon;
   types: Array<string>;
-  constructor(private pokemonsService: PokemonsService,
+  constructor(private pokemonService: PokemonService,
   private router: Router) { }
 
   ngOnInit() {
-    this.types = this.pokemonsService.getPokemonTypes();
+    this.types = this.pokemonService.getPokemonTypes();
+    // this.types = this.pokemonsService.getPokemonTypes();
   }
   hasType (type: string): boolean {
     const index = this.pokemon.types.indexOf(type);
@@ -43,11 +44,14 @@ export class PokemonFormComponent implements OnInit {
     }
     return true;
   }
-  // La méthode appelée lorsque le formulaire est soumis.
-  onSubmit(): void {
-    console.log('Submit form !');
+  goBack() {
     const link = ['/pokemon', this.pokemon.id];
     this.router.navigate(link);
+  }  // La méthode appelée lorsque le formulaire est soumis.
+  onSubmit(): void {
+    console.log('Submit form !');
+    this.pokemonService.updatePokemon(this.pokemon)
+                      .subscribe(() => this.goBack());
   }
 
 }

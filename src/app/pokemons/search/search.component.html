@@ -1,0 +1,13 @@
+<div id="search-component">
+  <h4>Pokemon Search</h4>
+
+  <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
+
+  <ul class="-webkit-search-decoration">
+    <li *ngFor="let pokemon of pokemons$ | async" >
+      <a routerLink="/pokemon/pok/{{pokemon.id}}">
+        {{pokemon.name}}
+      </a>
+    </li>
+  </ul>
+</div>

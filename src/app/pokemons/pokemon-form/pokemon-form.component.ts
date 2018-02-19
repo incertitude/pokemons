@@ -45,7 +45,7 @@ export class PokemonFormComponent implements OnInit {
     return true;
   }
   goBack() {
-    const link = ['/pokemon', this.pokemon.id];
+    const link = ['/pokemon/pok', this.pokemon.id];
     this.router.navigate(link);
   }  // La méthode appelée lorsque le formulaire est soumis.
   onSubmit(): void {

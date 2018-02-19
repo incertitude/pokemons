@@ -18,7 +18,7 @@ export class ListPokemonComponent implements OnInit {
   selectPokemon(pokemon: Pokemon): void {
 
     console.log('Vous avez selectionné ' + pokemon.name);
-    const link = ['/pokemon', pokemon.id];
+    const link = ['/pokemon/pok', pokemon.id];
     this.router.navigate(link);
 }
 ngOnInit() {

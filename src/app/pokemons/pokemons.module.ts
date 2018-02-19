@@ -10,6 +10,8 @@ import { FormsModule } from '@angular/forms';
 import { EditPokemonComponent } from './edit-pokemon/edit-pokemon.component';
 import { HttpClientModule } from '@angular/common/http';
 import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { SearchComponent } from './search/search.component';
+
 
 
 @NgModule({
@@ -23,6 +25,7 @@ import { InMemoryWebApiModule } from 'angular-in-memory-web-api';
     PokemonTypeColorPipe,
     PokemonFormComponent,
     EditPokemonComponent,
+    SearchComponent
   ],
     providers: [ ]
 })

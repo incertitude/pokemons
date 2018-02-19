@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router, Params } from '@angular/router';
 import { Pokemon } from '../pokemon';
 import {PokemonService} from '../../pokemon.service';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-detail-pokemon',
@@ -12,7 +13,8 @@ export class DetailPokemonComponent implements OnInit {
 
     pokemon: Pokemon = null; // liste des pokémons de notre application
   constructor(private route: ActivatedRoute, private router: Router,
-              private pokemonService: PokemonService) {}
+              private pokemonService: PokemonService,
+              private location: Location) {}
        // on injecte 'route' pour récupérer les paramètres de l'url, et 'router' pour rediriger l'utilisateur.
 
     ngOnInit(): void {
@@ -26,10 +28,10 @@ export class DetailPokemonComponent implements OnInit {
     }
     // Méthode permettant de rediriger l'utilisateur vers la page principale de l'application.
     goBack(): void {
-    this.router.navigate(['/pokemons']);
+    this.goBack();
     }
     goEdit(pokemon: Pokemon): void {
-      const link = ['/pokemon/edit', pokemon.id];
+      const link = ['/pokemon/pok/edit', pokemon.id];
       this.router.navigate(link);
     }
   }

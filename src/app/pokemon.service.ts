@@ -65,4 +65,14 @@ export class PokemonService {
       'Poison', 'Fée', 'Vol', 'Combat', 'Psy'
     ];
   }
+  searchPokemon(term: string): Observable<Pokemon[]> {
+    if (!term.trim()) {
+      return of ([]);
+    }
+    return this.http.get<Pokemon[]>(`api/pok/?name=${term}`)
+                    .pipe(
+                    tap(_ => this.log(`found a pokemon matching "${term}"`)),
+                    catchError(this.handleError<Pokemon[]>('search Pokemons', []))
+                    );
+  }
 }

@@ -1,17 +1,20 @@
-
-  #ii{
-    padding-top: 0px;
-    background-color: #888;
-  }
   .search-result li:hover {
     background-color: #607D8B;
   }
   
   .search-result li a {
-    color: #888;
+    padding-top: 8px;
+    padding-bottom: 4px;
+    color: black;
     display: block;
     text-decoration: none;
-  }
+    border-style: solid ;
+    border-top: none ;
+    border-left: none;
+    border-right: none;
+    border-width: 1px;
+    border-color: rgba(0, 0,0,0.3);
+    }
   
   .search-result li a:hover {
     color: white;
@@ -52,6 +55,13 @@ h4{
 }
   
   ul.search-result {
+    background-color: rgba(50, 163, 94, 0.4);
+    z-index: 999;
+    display: block;
+    position: absolute;
+    top: 270px;
     margin-top: 0;
     padding-left: 0;
+    width: 200px;
+
   }

@@ -3,8 +3,8 @@
 
   <input #searchBox id="search-box" (keyup)="search(searchBox.value)" />
 
-  <ul class="-webkit-search-decoration">
-    <li *ngFor="let pokemon of pokemons$ | async" >
+  <ul class="search-result">
+    <li id="ii" *ngFor="let pokemon of pokemons$ | async" >
       <a routerLink="/pokemon/pok/{{pokemon.id}}">
         {{pokemon.name}}
       </a>
